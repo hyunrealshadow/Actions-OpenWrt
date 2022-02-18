@@ -17,8 +17,8 @@ sed -i 's/192.168.100.3/192.168.50.5/g' package/base-files/files/bin/config_gene
 curl -sL -m 30 --retry 2 https://github.com/vernesong/OpenClash/releases/download/Clash/clash-linux-amd64.tar.gz -o /tmp/clash.tar.gz
 tar zxvf /tmp/clash.tar.gz -C /tmp >/dev/null 2>&1
 chmod +x /tmp/clash >/dev/null 2>&1
-mkdir -p openwrt/package/lean/luci-app-openclash/files/etc/openclash/core
-mv /tmp/clash openwrt/package/lean/luci-app-openclash/files/etc/openclash/core/clash >/dev/null 2>&1
+mkdir -p package/lean/luci-app-openclash/files/etc/openclash/core
+mv /tmp/clash package/lean/luci-app-openclash/files/etc/openclash/core/clash >/dev/null 2>&1
 rm -rf /tmp/clash.tar.gz >/dev/null 2>&1
 #Backup OpenClash cofig
-echo '/etc/openclash/' >> openwrt/package/base-files/files/etc/sysupgrade.conf
+echo '/etc/openclash/' >> package/base-files/files/etc/sysupgrade.conf
